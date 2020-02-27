@@ -18,4 +18,9 @@ public class PriceConverter {
     public double process(int priceInUsd) {
         return priceInUsd * CONVERSION_RATE;
     }
+
+    @Incoming("price-create")
+    public void processEmitter(double price) {
+        System.out.println(price);
+    }
 }
